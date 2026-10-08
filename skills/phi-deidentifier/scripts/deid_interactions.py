@@ -202,7 +202,7 @@ def deid_notebook_source(raw_fqn: str, k_target: int, view_name: str | None,
 
 # COMMAND ----------
 import sys
-sys.path.append("<path-to>/skills/hls-phi-deidentifier/scripts")  # adjust to your workspace
+sys.path.append("<path-to>/skills/phi-deidentifier/scripts")  # adjust to your workspace
 from run_deid import apply_deid
 
 # COMMAND ----------

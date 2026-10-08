@@ -1,5 +1,5 @@
 ---
-name: hls-cohort-builder
+name: cohort-builder
 description: >-
   Cohort builder for structured coded clinical data (OMOP/FHIR-flattened conditions,
   labs, meds, procedures) AND free-text clinical notes. Turns a natural-language
@@ -12,7 +12,7 @@ description: >-
   to choose, reports feasibility N before building, materializes a verified cohort plus a
   reproducible phenotype definition, and never fabricates literature citations. Run by
   calling the vetted entrypoints in scripts/cohort_run.py — do not hand-write cohort SQL.
-  For PHI de-identification of the result use hls-phi-deidentifier.
+  For PHI de-identification of the result use phi-deidentifier.
 version: 1.0.0
 author: Databricks HLS Field Engineering
 license: Databricks License
@@ -260,7 +260,7 @@ repo for the full A/B protocol and the live Genie-Code capture.
 5. **Feasibility gate is not optional** — never hand over a cohort without reporting N and
    per-criterion attrition.
 6. **Respect PHI governance** — the cohort inherits UC access controls; if the source is raw
-   PHI and the consumer is an analyst, run `hls-phi-deidentifier` on the output or build on a
+   PHI and the consumer is an analyst, run `phi-deidentifier` on the output or build on a
    de-identified source.
 7. **Keep raw notes out of the shareable cohort table** — verbatim note spans (PHI) live only in
    the separate `<cohort>_provenance` table, governed like the notes source; the cohort table
